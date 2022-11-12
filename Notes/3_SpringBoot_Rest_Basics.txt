@@ -1,0 +1,53 @@
+
+Spring boot rest api basics - Imporatnt anotatiions
+	
+	@Restcontroller	=> @Controller + @ResponceBody
+		@Controller 	=> make java class as Spring mvc controller
+		@ResponceBody 	=> Convert responce from java object to json format
+		
+	
+	@PathVariable	=> handels varibles which are passed in url path (@PathVariable("id") Integer id)
+	
+	@RequestParam	=> handel the values pass in url in key-value pair format (@RequestParam Integer id)
+						(localhost:8080/students?id=1)
+						
+						[
+							(localhost:8080/students?id=1&firstName=akash)
+							(
+								@RequstParam Integer id
+								@RequestParam String firstName
+							)
+						]
+	
+	@RequestBody	=> handels json data send using postmam client (@RequestMapping Student student)
+						it convert json format to java object
+						
+						{
+							"id":"101",
+							"firstName":"Akadh",
+							"lastName":"Aher"
+						}
+	
+	@ResponceStatus => for senting respnce status for url  @ResponceStatus(HttpStatus.Created)
+		(we mainly use ResponseEntity class for generating http responce)
+	
+	@RequetMapping	=> for specifying base url
+		@GetMappping	=> for geting the content from db 
+		@PostMapping	=> for uplloading data to db
+		@PutMapping		=> for changing the data allredy present in db
+		@DeleteMapping	=> for deleting data from db
+
+
+Spring boot rest api basics - Dependencies
+
+	web => for creating restfull web services also provide inbuild tomcat server
+	
+	
+Spring boot rest api basics - Classes And Interfaces
+	
+	1) ResponseEntity => 
+		- ResponseEntity represent the whole HTTP reponse status code, headers, and body
+		- we can use it to fullly configure the HTTP responce
+		- if we want to use it we have to return it from the endpoint, spring take cares of the rest
+		- ResponseEntity is a generic type we have to pass type hear. 
+		- We can use any type of responce body.

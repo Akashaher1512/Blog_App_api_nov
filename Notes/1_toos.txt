@@ -1,0 +1,7 @@
+
+Sowftware requirement  =>
+
+	java version - 18
+	STS 4 
+	Mysql8
+	
